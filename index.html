@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery - Mazali Taomlar</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="password-overlay">
+        <div class="password-box">
+            <h2>Xush kelibsiz!</h2>
+            <p>Davom etish uchun parolni kiriting:</p>
+            <input type="password" id="site-password" placeholder="Parol...">
+            <button onclick="checkPassword()">Kirish</button>
+            <p id="error-msg" style="color: #ff4757; display: none; margin-top: 10px;">Parol noto'g'ri!</p>
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="logo">Food<span>Express</span></div>
+                <ul class="nav-links">
+                    <li><a href="#">Asosiy</a></li>
+                    <li><a href="#menu-section">Taomlar</a></li>
+                    <li><a href="#special-offers">Xizmatlar</a></li>
+                    <li><a href="#footer-section">Aloqa</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <button class="btn-primary">Kirish</button>
+                    <button class="btn-primary">Ro'yxatdan o'tish</button>
+                </div>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Sevimli taomingizni <br> <span>Tezroq</span> yetkazamiz!</h1>
+                <p>Sizning shahringizdagi eng yaxshi restoranlardan eng mazali taomlar faqat bizda.</p>
+                <div class="hero-btns">
+                    <button class="btn-primary">Hozir buyurish</button>
+                    <button class="btn-secondary">Qanday ishlaydi?</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop"
+                    alt="Delicious Food">
+            </div>
+        </section>
+        <section class="brands">
+            <div class="brand-item">⭐ QuickFood</div>
+            <div class="brand-item">🍕 PizzaHut</div>
+            <div class="brand-item">🍔 BurgerKing</div>
+            <div class="brand-item">🍦 IceCreamy</div>
+            <div class="brand-item">🥤 CocaCola</div>
+        </section>
+
+
+        <section id="menu-section" class="menu">
+            <div class="menu-header">
+                <h2>Mashhur taomlarimiz</h2>
+                <p>Eng ko'p buyurtma beriladigan sara taomlar to'plami</p>
+            </div>
+
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Burger">
+                        <span class="badge">Mashhur</span>
+                        <span class="price">$12.00</span>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">⭐ 4.9 (120+ sharh)</div>
+                        <h3>Double Cheese Burger</h3>
+                        <p>Go'shtli kotlet, erigan pishloq va yangi sabzavotlar.</p>
+                        <div class="card-footer">
+                            <span>⏱ 15-20 daqiqa</span>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza">
+                        <span class="price">$18.00</span>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">⭐ 4.8 (85+ sharh)</div>
+                        <h3>Pepperoni Max</h3>
+                        <p>Achchiq pepperoni va mozzarella pishlog'i uyg'unligi.</p>
+                        <div class="card-footer">
+                            <span>⏱ 20-30 daqiqa</span>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=500" alt="Sushi">
+                        <span class="badge" style="background: #1dd1a1;">Yangi</span>
+                        <span class="price">$22.00</span>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">⭐ 5.0 (40+ sharh)</div>
+                        <h3>Premium Sushi Set</h3>
+                        <p>Eng yangi dengiz mahsulotlaridan tayyorlangan to'plam.</p>
+                        <div class="card-footer">
+                            <span>⏱ 25-35 daqiqa</span>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500" alt="Salad">
+                        <span class="price">$9.00</span>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">⭐ 4.7 (60+ sharh)</div>
+                        <h3>Gretsiya Salati</h3>
+                        <p>Sog'lom turmush tarzi uchun vitaminlarga boy tanlov.</p>
+                        <div class="card-footer">
+                            <span>⏱ 10-15 daqiqa</span>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500" alt="Steak">
+                        <span class="price">$25.00</span>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">⭐ 4.9 (110+ sharh)</div>
+                        <h3>Telyatin Steyk</h3>
+                        <p>Maxsus olovda pishirilgan yumshoq mol go'shti.</p>
+                        <div class="card-footer">
+                            <span>⏱ 30-40 daqiqa</span>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?w=500" alt="Pasta">
+                        <span class="price">$14.00</span>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating">⭐ 4.8 (95+ sharh)</div>
+                        <h3>Italiya Pastasi</h3>
+                        <p>Klassik uslubdagi qaylali va pishloqli makaron.</p>
+                        <div class="card-footer">
+                            <span>⏱ 15-25 daqiqa</span>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+
+
+
+        <div class="category-filter">
+            <a href="index.html" class="cat-item active">
+                <div class="cat-icon all-icon">M</div>
+                <span>Hammasi</span>
+            </a>
+
+            <a href="burgers.html" class="cat-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732217.png" alt="Burger">
+                <span>Burger</span>
+            </a>
+
+            <a href="pizza.html" class="cat-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Pizza">
+                <span>Pizza</span>
+            </a>
+
+            <a href="sushi.html" class="cat-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/2252/2252438.png" alt="Sushi">
+                <span>Sushi</span>
+            </a>
+
+            <a href="drinks.html" class="cat-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/3121/3121784.png" alt="Drinks">
+                <span>Ichimliklar</span>
+            </a>
+        </div>
+        <section id="special-offers" class="special-offers">
+            <div class="offer-card orange">
+                <div class="offer-text">
+                    <span>Eng ko'p sotilgan</span>
+                    <h3>King Burger</h3>
+                    <p>20% Chegirma!</p>
+                    <button class="btn-white">Buyurtma</button>
+                </div>
+                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400" alt="Offer">
+            </div>
+            <div class="offer-card blue">
+                <div class="offer-text">
+                    <span>Yangi kelgan</span>
+                    <h3>Sushi Family</h3>
+                    <p>Yangi to'plam.</p>
+                    <button class="btn-white">Ko'rish</button>
+                </div>
+                <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400" alt="Offer">
+            </div>
+            <div class="offer-card green">
+                <div class="offer-text">
+                    <span>Healthy Choice</span>
+                    <h3>Fit Salad</h3>
+                    <p>Vitaminsiz qolmang.</p>
+                    <button class="btn-white">Batafsil</button>
+                </div>
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400" alt="Offer">
+            </div>
+            <div class="offer-card purple">
+                <div class="offer-text">
+                    <span>Tungi taklif</span>
+                    <h3>Hot Pizza</h3>
+                    <p>1+1 Aksiyasi.</p>
+                    <button class="btn-white">Olish</button>
+                </div>
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400" alt="Offer">
+            </div>
+        </section>
+
+        <section id="special-offers" class="special-offers">
+            <footer id="footer-section" class="modern-footer">
+                <div class="footer-wave">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                        preserveAspectRatio="none">
+                        <path
+                            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                            class="shape-fill"></path>
+                    </svg>
+                </div>
+
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <h2 class="logo-light">Food<span>Express</span></h2>
+                        <p>Taom emas, quvonch ulashamiz! Eng tezkor yetkazib berish xizmati.</p>
+                        <div class="app-buttons">
+                            <button class="app-btn">App Store</button>
+                            <button class="app-btn">Google Play</button>
+                        </div>
+                    </div>
+
+                    <div class="footer-links-group">
+                        <div class="f-column">
+                            <h4>Menu</h4>
+                            <a href="#">Pissalar</a>
+                            <a href="#">Burgerlar</a>
+                            <a href="#">Ichimliklar</a>
+                        </div>
+                        <div class="f-column">
+                            <h4>Kompaniya</h4>
+                            <a href="#">Biz haqimizda</a>
+                            <a href="#">Vakansiyalar</a>
+                            <a href="#">Blog</a>
+                        </div>
+                        <div class="f-column">
+                            <h4>Bog'lanish</h4>
+                            <span>📞 +998 71 200 00 00</span>
+                            <span>📍 Toshkent, O'zbekiston</span>
+                            <div class="social-circles">
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-telegram"></i>
+                                <i class="fab fa-facebook"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copy">
+                    <p>© 2024 FoodExpress — Mazali lahzalar hamrohi</p>
+                </div>
+            </footer>
+        </section>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
