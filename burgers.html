@@ -26,10 +26,15 @@
         <a href="drinks.html" class="cat-item"><img src="https://cdn-icons-png.flaticon.com/512/3121/3121784.png"
                 width="20"> <span>Ichimliklar</span></a>
     </div>
+    <div class="search-container">
+        <input type="text" id="menu-search" placeholder="Taom nomini yozing (masalan: Burger)..."
+            onkeyup="searchFood()">
+        <button class="search-icon-btn">🔍</button>
+    </div>
 
     <h1 class="section-title">Eng Mazali Burgerlar</h1>
 
-    <div class="card-container">
+    <div id="menu-start" class="card-container">
         <div class="card">
             <div class="card-img">
                 <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Burger">
@@ -42,19 +47,21 @@
                 <p>Go'shtli kotlet, erigan pishloq va yangi sabzavotlar.</p>
                 <div class="card-footer">
                     <span>⏱ 15-20 daqiqa</span>
-                    <button class="btn-add">+</button>
+                    <button class="btn-add" onclick="addToCart('Double Cheese Burger', 12.00)">+</button>
+
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Burger">
+                <img src="https://media.istockphoto.com/id/520410807/photo/cheeseburger.jpg?s=612x612&w=0&k=20&c=fG_OrCzR5HkJGI8RXBk76NwxxTasMb1qpTVlEM0oyg4="
+                    alt="Burger">
                 <span class="badge">Mashhur</span>
-                <span class="price">$12.00</span>
+                <span class="price">$11.00</span>
             </div>
             <div class="card-info">
-                <div class="rating">⭐ 4.9 (120+ sharh)</div>
-                <h3>Double Cheese Burger</h3>
+                <div class="rating">⭐ 3.7 (120+ sharh)</div>
+                <h3>Famous Burger in the world</h3>
                 <p>Go'shtli kotlet, erigan pishloq va yangi sabzavotlar.</p>
                 <div class="card-footer">
                     <span>⏱ 15-20 daqiqa</span>
@@ -64,13 +71,14 @@
         </div>
         <div class="card">
             <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Burger">
+                <img src="https://www.foodandwine.com/thmb/XE8ubzwObCIgMw7qJ9CsqUZocNM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MSG-Smash-Burger-FT-RECIPE0124-d9682401f3554ef683e24311abdf342b.jpg"
+                    alt="Burger">
                 <span class="badge">Mashhur</span>
-                <span class="price">$12.00</span>
+                <span class="price">$13.00</span>
             </div>
             <div class="card-info">
                 <div class="rating">⭐ 4.9 (120+ sharh)</div>
-                <h3>Double Cheese Burger</h3>
+                <h3>Double Kotlet Burger</h3>
                 <p>Go'shtli kotlet, erigan pishloq va yangi sabzavotlar.</p>
                 <div class="card-footer">
                     <span>⏱ 15-20 daqiqa</span>
@@ -80,13 +88,14 @@
         </div>
         <div class="card">
             <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Burger">
+                <img src="https://img.freepik.com/free-psd/juicy-double-cheeseburger-with-melted-cheese_84443-79315.jpg?semt=ais_hybrid&w=740&q=80"
+                    alt="Burger">
                 <span class="badge">Mashhur</span>
-                <span class="price">$12.00</span>
+                <span class="price">$15.00</span>
             </div>
             <div class="card-info">
                 <div class="rating">⭐ 4.9 (120+ sharh)</div>
-                <h3>Double Cheese Burger</h3>
+                <h3>Double Class Burger</h3>
                 <p>Go'shtli kotlet, erigan pishloq va yangi sabzavotlar.</p>
                 <div class="card-footer">
                     <span>⏱ 15-20 daqiqa</span>
@@ -96,13 +105,14 @@
         </div>
         <div class="card">
             <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Burger">
+                <img src="https://images.services.kitchenstories.io/g_7pGWVXXzQBrxDufAdzMfJScg4=/3840x0/filters:quality(85)/images.kitchenstories.io/wagtailOriginalImages/R2121_smash_burger_title.jpg"
+                    alt="Burger">
                 <span class="badge">Mashhur</span>
-                <span class="price">$12.00</span>
+                <span class="price">$14.00</span>
             </div>
             <div class="card-info">
                 <div class="rating">⭐ 4.9 (120+ sharh)</div>
-                <h3>Double Cheese Burger</h3>
+                <h3>Sersuv Burger</h3>
                 <p>Go'shtli kotlet, erigan pishloq va yangi sabzavotlar.</p>
                 <div class="card-footer">
                     <span>⏱ 15-20 daqiqa</span>
@@ -112,13 +122,48 @@
         </div>
         <div class="card">
             <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Burger">
+                <img src="https://static01.nyt.com/images/2022/06/27/dining/kc-mushroom-beef-burgers/merlin_209008674_b3fa58fa-9bb1-4cfe-a08a-40b4dda0de78-jumbo.jpg"
+                    alt="Burger">
                 <span class="badge">Mashhur</span>
-                <span class="price">$12.00</span>
+                <span class="price">$10.00</span>
             </div>
             <div class="card-info">
                 <div class="rating">⭐ 4.9 (120+ sharh)</div>
-                <h3>Double Cheese Burger</h3>
+                <h3>Sabzavotli Burger</h3>
+                <p>Go'shtli kotlet, erigan pishloq va yangi sabzavotlar.</p>
+                <div class="card-footer">
+                    <span>⏱ 15-20 daqiqa</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="https://thumbs.dreamstime.com/b/beef-burger-isolated-white-background-30569226.jpg"
+                    alt="Burger">
+                <span class="badge">Mashhur</span>
+                <span class="price">$11.00</span>
+            </div>
+            <div class="card-info">
+                <div class="rating">⭐ 4.9 (120+ sharh)</div>
+                <h3>Yumshoq Burger</h3>
+                <p>Go'shtli kotlet, erigan pishloq va yangi sabzavotlar.</p>
+                <div class="card-footer">
+                    <span>⏱ 15-20 daqiqa</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="https://st.depositphotos.com/1639269/2167/i/450/depositphotos_21679153-stock-photo-hamburger-with-cheese-pickles-onion.jpg"
+                    alt="Burger">
+                <span class="badge">Mashhur</span>
+                <span class="price">$13.00</span>
+            </div>
+            <div class="card-info">
+                <div class="rating">⭐ 4.9 (120+ sharh)</div>
+                <h3>KIchkina Burger</h3>
                 <p>Go'shtli kotlet, erigan pishloq va yangi sabzavotlar.</p>
                 <div class="card-footer">
                     <span>⏱ 15-20 daqiqa</span>

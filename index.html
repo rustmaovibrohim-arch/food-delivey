@@ -19,6 +19,20 @@
             <p id="error-msg" style="color: #ff4757; display: none; margin-top: 10px;">Parol noto'g'ri!</p>
         </div>
     </div>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleCart()">&times;</span>
+            <h2>Sizning Savatingiz</h2>
+            <hr>
+            <div id="cart-items-list">
+                <p style="text-align:center; color:#999;">Savat hozircha bo'sh</p>
+            </div>
+            <div class="modal-footer">
+                <div class="total-price">Jami: <span id="modal-total">$0.00</span></div>
+                <button class="btn-checkout" onclick="checkout()">Buyurtma berish</button>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <header>
             <nav class="navbar">
@@ -35,6 +49,12 @@
                 </div>
             </nav>
         </header>
+        <div class="ai-assistant">
+            <button id="start-ai" class="ai-btn">
+                <span class="ai-icon">🤖</span>
+                <span id="ai-status">AI bilan gaplashish</span>
+            </button>
+        </div>
 
         <section class="hero">
             <div class="hero-content">
@@ -50,6 +70,57 @@
                     alt="Delicious Food">
             </div>
         </section>
+        <div id="how-it-works-modal" class="auth-modal">
+            <div class="auth-modal-content info-modal">
+                <span class="close-auth" onclick="closeHowModal()">&times;</span>
+                <div class="auth-header">
+                    <h2>Qanday buyurtma beriladi? 📝</h2>
+                    <p>Atigi 3 ta oddiy qadamda mazali taom stolingizda bo'ladi!</p>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-num">1</div>
+                        <h4>Taomni tanlang</h4>
+                        <p>Menyudan o'zingizga yoqqan eng sara taomlarni savatchaga qo'shing.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">2</div>
+                        <h4>Manzilni kiriting</h4>
+                        <p>Buyurtmani rasmiylashtiring va yetkazib berish manzilini ko'rsating.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">3</div>
+                        <h4>Huzur qiling</h4>
+                        <p>Bizning kuryerlar tez fursatda taomni issiq holda yetkazib berishadi.</p>
+                    </div>
+                </div>
+
+                <button class="auth-submit-btn" onclick="closeHowModal()">Tushunarli!</button>
+            </div>
+        </div>
+        <div id="order-modal" class="auth-modal">
+            <div class="auth-modal-content">
+                <span class="close-auth" onclick="closeOrderModal()">&times;</span>
+                <div class="auth-header">
+                    <h2>Tezkor buyurtma 🚚</h2>
+                    <p>Ma'lumotlaringizni qoldiring, biz siz bilan bog'lanamiz.</p>
+                </div>
+                <form onsubmit="handleQuickOrder(event)">
+                    <div class="input-box">
+                        <input type="text" id="order-name" placeholder="Ismingiz" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" id="order-phone" placeholder="Telefon raqamingiz (+998...)" required>
+                    </div>
+                    <div class="input-box">
+                        <textarea id="order-address" placeholder="Yetkazib berish manzili" required
+                            style="width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #ddd; font-family: inherit;"></textarea>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">Buyurtmani tasdiqlash</button>
+                </form>
+            </div>
+        </div>
         <section class="brands">
             <div class="brand-item">⭐ QuickFood</div>
             <div class="brand-item">🍕 PizzaHut</div>
@@ -57,11 +128,18 @@
             <div class="brand-item">🍦 IceCreamy</div>
             <div class="brand-item">🥤 CocaCola</div>
         </section>
-
+        <div class="search-container">
+            <input type="text" id="menu-search" placeholder="Taom nomini yozing (masalan: Burger)..."
+                onkeyup="searchFood()">
+            <button class="search-icon-btn">🔍</button>
+        </div>
 
         <section id="menu-section" class="menu">
             <div class="menu-header">
                 <h2>Mashhur taomlarimiz</h2>
+                <button class="btn-primary" id="cart-btn">Savat (0) - $0.00</button>
+                <br>
+                <br>
                 <p>Eng ko'p buyurtma beriladigan sara taomlar to'plami</p>
             </div>
 
@@ -78,7 +156,7 @@
                         <p>Go'shtli kotlet, erigan pishloq va yangi sabzavotlar.</p>
                         <div class="card-footer">
                             <span>⏱ 15-20 daqiqa</span>
-                            <button class="btn-add">+</button>
+                            <button class="btn-add" onclick="addToCart('Double Cheese Burger', 12.00)">+</button>
                         </div>
                     </div>
                 </div>
@@ -94,7 +172,7 @@
                         <p>Achchiq pepperoni va mozzarella pishlog'i uyg'unligi.</p>
                         <div class="card-footer">
                             <span>⏱ 20-30 daqiqa</span>
-                            <button class="btn-add">+</button>
+                            <button class="btn-add" onclick="addToCart('Double Cheese Burger', 12.00)">+</button>
                         </div>
                     </div>
                 </div>
@@ -111,7 +189,7 @@
                         <p>Eng yangi dengiz mahsulotlaridan tayyorlangan to'plam.</p>
                         <div class="card-footer">
                             <span>⏱ 25-35 daqiqa</span>
-                            <button class="btn-add">+</button>
+                            <button class="btn-add" onclick="addToCart('Double Cheese Burger', 12.00)">+</button>
                         </div>
                     </div>
                 </div>
@@ -127,7 +205,7 @@
                         <p>Sog'lom turmush tarzi uchun vitaminlarga boy tanlov.</p>
                         <div class="card-footer">
                             <span>⏱ 10-15 daqiqa</span>
-                            <button class="btn-add">+</button>
+                            <button class="btn-add" onclick="addToCart('Double Cheese Burger', 12.00)">+</button>
                         </div>
                     </div>
                 </div>
@@ -143,7 +221,7 @@
                         <p>Maxsus olovda pishirilgan yumshoq mol go'shti.</p>
                         <div class="card-footer">
                             <span>⏱ 30-40 daqiqa</span>
-                            <button class="btn-add">+</button>
+                            <button class="btn-add" onclick="addToCart('Double Cheese Burger', 12.00)">+</button>
                         </div>
                     </div>
                 </div>
@@ -159,7 +237,7 @@
                         <p>Klassik uslubdagi qaylali va pishloqli makaron.</p>
                         <div class="card-footer">
                             <span>⏱ 15-25 daqiqa</span>
-                            <button class="btn-add">+</button>
+                            <button class="btn-add" onclick="addToCart('Double Cheese Burger', 12.00)">+</button>
                         </div>
                     </div>
                 </div>
@@ -201,93 +279,147 @@
                     <span>Eng ko'p sotilgan</span>
                     <h3>King Burger</h3>
                     <p>20% Chegirma!</p>
-                    <button class="btn-white">Buyurtma</button>
+                    <a href="burgers.html#menu-start" class="btn-white">Buyurtma</a>
                 </div>
-                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400" alt="Offer">
+                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400" alt="Burger">
             </div>
+
             <div class="offer-card blue">
                 <div class="offer-text">
                     <span>Yangi kelgan</span>
                     <h3>Sushi Family</h3>
                     <p>Yangi to'plam.</p>
-                    <button class="btn-white">Ko'rish</button>
+                    <a href="sushi.html#menu-start" class="btn-white">Ko'rish</a>
                 </div>
-                <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400" alt="Offer">
+                <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400" alt="Sushi">
             </div>
+
             <div class="offer-card green">
                 <div class="offer-text">
-                    <span>Healthy Choice</span>
-                    <h3>Fit Salad</h3>
-                    <p>Vitaminsiz qolmang.</p>
-                    <button class="btn-white">Batafsil</button>
+                    <span>Ichimliklar</span>
+                    <h3>Salqin Ichimliklar</h3>
+                    <p>Chanqoqni qoldiring</p>
+                    <a href="./drinks.html" class="btn-white">O'tish</a>
                 </div>
-                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400" alt="Offer">
+                <img src="https://zamin.uz/uploads/posts/2022-08/220808091235.jpg" alt="Ichimliklar">
             </div>
+
             <div class="offer-card purple">
                 <div class="offer-text">
                     <span>Tungi taklif</span>
                     <h3>Hot Pizza</h3>
                     <p>1+1 Aksiyasi.</p>
-                    <button class="btn-white">Olish</button>
+                    <a href="pizza.html#menu-start" class="btn-white">Olish</a>
                 </div>
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400" alt="Offer">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400" alt="Pizza">
             </div>
         </section>
 
-        <section id="special-offers" class="special-offers">
-            <footer id="footer-section" class="modern-footer">
-                <div class="footer-wave">
-                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                        preserveAspectRatio="none">
-                        <path
-                            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                            class="shape-fill"></path>
-                    </svg>
-                </div>
+        <footer id="footer-section" class="modern-footer">
+            <div class="footer-wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
 
-                <div class="footer-main">
-                    <div class="footer-brand">
-                        <h2 class="logo-light">Food<span>Express</span></h2>
-                        <p>Taom emas, quvonch ulashamiz! Eng tezkor yetkazib berish xizmati.</p>
-                        <div class="app-buttons">
-                            <button class="app-btn">App Store</button>
-                            <button class="app-btn">Google Play</button>
-                        </div>
-                    </div>
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h2 class="logo-light">Food<span>Express</span></h2>
+                    <p>Taom emas, quvonch ulashamiz! Eng tezkor yetkazib berish xizmati.</p>
+                    <div class="app-buttons">
+                        <a href="https://www.apple.com/app-store/" target="_blank" class="app-link">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                                alt="App Store" style="height: 45px;">
+                        </a>
 
-                    <div class="footer-links-group">
-                        <div class="f-column">
-                            <h4>Menu</h4>
-                            <a href="#">Pissalar</a>
-                            <a href="#">Burgerlar</a>
-                            <a href="#">Ichimliklar</a>
-                        </div>
-                        <div class="f-column">
-                            <h4>Kompaniya</h4>
-                            <a href="#">Biz haqimizda</a>
-                            <a href="#">Vakansiyalar</a>
-                            <a href="#">Blog</a>
-                        </div>
-                        <div class="f-column">
-                            <h4>Bog'lanish</h4>
-                            <span>📞 +998 71 200 00 00</span>
-                            <span>📍 Toshkent, O'zbekiston</span>
-                            <div class="social-circles">
-                                <i class="fab fa-instagram"></i>
-                                <i class="fab fa-telegram"></i>
-                                <i class="fab fa-facebook"></i>
-                            </div>
-                        </div>
+                        <a href="https://play.google.com/store" target="_blank" class="app-link">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                                alt="Google Play" style="height: 45px;">
+                        </a>
                     </div>
                 </div>
-                <div class="footer-copy">
-                    <p>© 2024 FoodExpress — Mazali lahzalar hamrohi</p>
+
+                <div class="footer-links-group">
+                    <div class="f-column">
+                        <h4>Menu</h4>
+                        <a href="#">Pissalar</a>
+                        <a href="#">Burgerlar</a>
+                        <a href="#">Ichimliklar</a>
+                    </div>
+                    <div class="f-column">
+                        <h4>Kompaniya</h4>
+                        <a href="#">Biz haqimizda</a>
+                        <a href="#">Vakansiyalar</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="f-column">
+                        <h4>Bog'lanish</h4>
+                        <span>📞 +998 71 200 00 00</span>
+                        <span>📍 Toshkent, O'zbekiston</span>
+                        <div class="social-circles">
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-telegram"></i>
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                    </div>
                 </div>
-            </footer>
-        </section>
+            </div>
+            <div class="footer-copy">
+                <p>© 2026 FoodExpress — Mazali lahzalar hamrohi</p>
+            </div>
+        </footer>
     </div>
 
     <script src="./main.js"></script>
+    <div id="login-modal" class="auth-modal">
+        <div class="auth-modal-content">
+            <span class="close-auth" onclick="closeAuthModal('login')">&times;</span>
+            <div class="auth-header">
+                <h2>Xush kelibsiz!</h2>
+                <p>Tizimga kirish uchun ma'lumotlaringizni kiriting</p>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('Tizimga kirdingiz!')">
+                <div class="input-box">
+                    <input type="email" placeholder="Emailingiz" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Parolingiz" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">Kirish</button>
+            </form>
+            <div class="auth-footer">
+                Hisobingiz yo'qmi? <span onclick="switchModal('register')">Ro'yxatdan o'tish</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="register-modal" class="auth-modal">
+        <div class="auth-modal-content">
+            <span class="close-auth" onclick="closeAuthModal('register')">&times;</span>
+            <div class="auth-header">
+                <h2>Ro'yxatdan o'tish</h2>
+                <p>Yangi hisob yarating va buyurtma berishni boshlang</p>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('Ro\'yxatdan o\'tdingiz!')">
+                <div class="input-box">
+                    <input type="text" placeholder="Ism va Familiya" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Emailingiz" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Parol yarating" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">Ro'yxatdan o'tish</button>
+            </form>
+            <div class="auth-footer">
+                Hisobingiz bormi? <span onclick="switchModal('login')">Kirish</span>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

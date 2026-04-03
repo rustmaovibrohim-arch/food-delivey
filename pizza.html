@@ -26,8 +26,12 @@
         <a href="drinks.html" class="cat-item"><img src="https://cdn-icons-png.flaticon.com/512/3121/3121784.png"
                 width="20"> <span>Ichimliklar</span></a>
     </div>
+    <div class="search-container">
+        <input type="text" id="menu-search" placeholder="Taom nomini yozing (masalan: pizza)..." onkeyup="searchFood()">
+        <button class="search-icon-btn">🔍</button>
+    </div>
 
-    <h1 class="section-title">Eng Mazali Burgerlar</h1>
+    <h1 class="section-title">Eng Mazali Pizzalar</h1>
 
     <div class="card-container">
         <div class="card">
@@ -47,12 +51,44 @@
         </div>
         <div class="card">
             <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza">
-                <span class="price">$18.00</span>
+                <img src="https://www.shutterstock.com/image-photo/delicious-pizza-fresh-nutritious-vegetables-600nw-2607572607.jpg"
+                    alt="Pizza">
+                <span class="price">$15.00</span>
             </div>
             <div class="card-info">
                 <div class="rating">⭐ 4.8 (85+ sharh)</div>
-                <h3>Pepperoni Max</h3>
+                <h3>Cheese pizza</h3>
+                <p>Achchiq Pizza va mozzarella pishlog'i uyg'unligi.</p>
+                <div class="card-footer">
+                    <span>⏱ 20-30 daqiqa</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="https://cdn.pixabay.com/photo/2020/05/17/04/22/pizza-5179939_640.jpg" alt="Pizza">
+                <span class="price">$16.00</span>
+            </div>
+            <div class="card-info">
+                <div class="rating">⭐ 4.8 (85+ sharh)</div>
+                <h3>Salatli pizza</h3>
+                <p>Achchiq Salatli Pizza va mozzarella pishlog'i uyg'unligi.</p>
+                <div class="card-footer">
+                    <span>⏱ 20-30 daqiqa</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="https://media.istockphoto.com/id/938742222/ru/%D1%84%D0%BE%D1%82%D0%BE/%D1%87%D0%B8%D1%81%D0%B8-%D0%BF%D0%B5%D0%BF%D0%BF%D0%B5%D1%80%D0%BE%D0%BD%D0%B8-%D0%BF%D0%B8%D1%86%D1%86%D0%B0.jpg?s=612x612&w=0&k=20&c=RR6JuPE9lJeYBVKtEIf0EJfwCwX7BAOa-jDTsUAFj-8="
+                    alt="Pizza">
+                <span class="price">$14.00</span>
+            </div>
+            <div class="card-info">
+                <div class="rating">⭐ 4.8 (85+ sharh)</div>
+                <h3>Pepperoni Pizza</h3>
                 <p>Achchiq pepperoni va mozzarella pishlog'i uyg'unligi.</p>
                 <div class="card-footer">
                     <span>⏱ 20-30 daqiqa</span>
@@ -62,13 +98,13 @@
         </div>
         <div class="card">
             <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza">
+                <img src="https://roll-club.dp.ua/wp-content/uploads/2023/11/miasnyi-miks-kh5-900kh600.jpg" alt="Pizza">
                 <span class="price">$18.00</span>
             </div>
             <div class="card-info">
                 <div class="rating">⭐ 4.8 (85+ sharh)</div>
-                <h3>Pepperoni Max</h3>
-                <p>Achchiq pepperoni va mozzarella pishlog'i uyg'unligi.</p>
+                <h3>Myasnoy Pizza</h3>
+                <p>Myasnoy Pizza va mozzarella pishlog'i uyg'unligi.</p>
                 <div class="card-footer">
                     <span>⏱ 20-30 daqiqa</span>
                     <button class="btn-add">+</button>
@@ -77,13 +113,14 @@
         </div>
         <div class="card">
             <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza">
-                <span class="price">$18.00</span>
+                <img src="https://imageproxy.wolt.com/menu/menu-images/66e956ac841a84584a956586/492ae562-74de-11ef-b3b5-92128b86e63c_pctgehj3j3aupdnrxalnrlcfdoppkaqzvlebqt4g.jpg"
+                    alt="Pizza">
+                <span class="price">$19.00</span>
             </div>
             <div class="card-info">
                 <div class="rating">⭐ 4.8 (85+ sharh)</div>
-                <h3>Pepperoni Max</h3>
-                <p>Achchiq pepperoni va mozzarella pishlog'i uyg'unligi.</p>
+                <h3>Qo'ziqorinli Pizza</h3>
+                <p>Qo'ziqorinli Pizza va mozzarella pishlog'i uyg'unligi.</p>
                 <div class="card-footer">
                     <span>⏱ 20-30 daqiqa</span>
                     <button class="btn-add">+</button>
@@ -92,13 +129,14 @@
         </div>
         <div class="card">
             <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza">
+                <img src="https://png.pngtree.com/png-vector/20241106/ourmid/pngtree-extra-cheesy-pizza-slice-png-image_14174689.png"
+                    alt="Pizza">
                 <span class="price">$18.00</span>
             </div>
             <div class="card-info">
                 <div class="rating">⭐ 4.8 (85+ sharh)</div>
-                <h3>Pepperoni Max</h3>
-                <p>Achchiq pepperoni va mozzarella pishlog'i uyg'unligi.</p>
+                <h3>SIrli Pizza</h3>
+                <p>Sirli Pizza va mozzarella pishlog'i uyg'unligi.</p>
                 <div class="card-footer">
                     <span>⏱ 20-30 daqiqa</span>
                     <button class="btn-add">+</button>
@@ -107,13 +145,13 @@
         </div>
         <div class="card">
             <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza">
+                <img src="https://api.sushimaster.uz/uploads/products/product-1767905136154-155496026.jpg" alt="Pizza">
                 <span class="price">$18.00</span>
             </div>
             <div class="card-info">
                 <div class="rating">⭐ 4.8 (85+ sharh)</div>
-                <h3>Pepperoni Max</h3>
-                <p>Achchiq pepperoni va mozzarella pishlog'i uyg'unligi.</p>
+                <h3>Achchiq Pizza</h3>
+                <p>Achchiq Pizza va mozzarella pishlog'i uyg'unligi.</p>
                 <div class="card-footer">
                     <span>⏱ 20-30 daqiqa</span>
                     <button class="btn-add">+</button>
